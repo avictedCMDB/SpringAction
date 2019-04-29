@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="compactDisc1" class="com.avicted.chapter2.daoImpl.SgtPeppers"/>
+
+    <!--1、设置属性(将bean的引用设置到属性中)-->
+    <bean id="cdPlayer1" class="com.avicted.chapter2.daoImpl.CDPlayer1" >
+        <property name="compactDisc" ref="compactDisc1" />
+    </bean>
+
+    <!--2、设置属性(将字面量注入到属性中)-->
+    <bean id="reallyBlankDisc" class="com.avicted.chapter2.daoImpl.BankDisc1">
+        <property name="title" value="Sgt.Pepper's Lonely Hearts Club Band" />
+        <property name="artist" value="The Beatles" />
+        <property name="tracks">
+            <list>
+                <value>Sgt.Pegger's Lonely Hearts Club Band</value>
+                <value>With a Little Help from My Friends</value>
+                <value>Lucy in the Sky with Diamonds</value>
+                <value>Getting Better</value>
+                <value>Fixing a Hole</value>
+            </list>
+        </property>
+    </bean>
+
+
+</beans>

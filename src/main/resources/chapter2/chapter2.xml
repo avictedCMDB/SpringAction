@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+    <!--导入其他的xml文件：就是使用import元素-->
+    <import resource="chapter2-1.xml" />
+    <!--导入JavaConfig类的方法，就是使用xml文件中的bean-->
+    <bean class="com.avicted.chapter2.javaConfig.CDConfig" />
+
+    <!--1、构造器注入bean引用-->
+    <bean id="compactDisc1" class="com.avicted.chapter2.daoImpl.SgtPeppers"/>
+    <bean id="cdPlayer" class="com.avicted.chapter2.daoImpl.CDPlayer">
+        <constructor-arg ref="compactDisc1"/>
+    </bean>
+
+    <!--2、将字面量注入到构造器中-->
+    <bean id="compactDisc2" class="com.avicted.chapter2.daoImpl.BlankDisc">
+        <constructor-arg value="Sgt.Pegger's Lonely Hearts Club Band" />
+        <constructor-arg value="The Beatles"/>
+        <constructor-arg ><null/></constructor-arg>
+    </bean>
+
+    <!--3、将集合装配到构造器参数中-->
+    <bean id="compactDisc3_1" class="com.avicted.chapter2.daoImpl.BlankDisc">
+        <constructor-arg value="Sgt.Pegger's Lonely Hearts Club Band" />
+        <constructor-arg value="The Beatles"/>
+        <constructor-arg>
+            <list>
+                <value>Sgt.Pegger's Lonely Hearts Club Band</value>
+                <value>With a Little Help from My Friends</value>
+                <value>Lucy in the Sky with Diamonds</value>
+                <value>Getting Better</value>
+                <value>Fixing a Hole</value>
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <bean id="compactDisc3_2" class="com.avicted.chapter2.service.Discography">
+        <constructor-arg value="The Beatles"/>
+        <constructor-arg>
+            <list>
+                <ref bean="compactDisc1"/>
+                <ref bean="compactDisc2"/>
+            </list>
+        </constructor-arg>
+    </bean>
+
+
+
+
+</beans>

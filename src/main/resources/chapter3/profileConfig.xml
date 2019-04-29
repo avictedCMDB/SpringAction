@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+       xmlns:jee="http://www.springframework.org/schema/jee" xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/jdbc
+       http://www.springframework.org/schema/jdbc/spring-jdbc.xsd
+       http://www.springframework.org/schema/jee
+       http://www.springframework.org/schema/jee/spring-jee.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <!--dev profile 的 bean-->
+    <beans profile="dev">
+        <jdbc:embedded-database id="dataSource1">
+            <jdbc:script location="classpath:com/avicted/sql/schema.sql" />
+            <jdbc:script location="classpath:com/avicted/sql/test-data.sql" />
+        </jdbc:embedded-database>
+    </beans>
+
+    <!--prod profile 的 bean-->
+    <beans profile="prod">
+        <jee:jndi-lookup id="dataSource2"
+                         jndi-name="jdbc/myDatabase"
+                         resource-ref="true"
+                         proxy-interface="javafx.sql.DataSource" />
+    </beans>
+
+    <!--创建基于连接池定义的DataSource bean，标注为qa-->
+    <beans profile="qa">
+        <!--<bean id="dataSource3"
+              class="org.apache.commons.dbcp.BasicDataSource"
+              destroy-method="close"
+              p:url="jdbc:h2:tcp://dbserver/~/test"
+              p:driverClassName="org.h2.Driver"
+              p:username="sa"
+              p:password="password"
+              p:initialSize="20"
+              p:maxActive="30"
+        />-->
+    </beans>
+
+
+    <beans>
+        <!--在XML文件中配置原型作用域-->
+        <bean id="notePad" class="com.avicted.chapter3.bean.Notepad" scope="prototype" />
+
+        <!--在XML文件中：配置会话和请求作用域-->
+        <bean id="cart" class="com.avicted.chapter3.service.ShoppingCart1" scope="session">
+            <aop:scoped-proxy />
+        </bean>
+
+        <bean id="cart1" class="com.avicted.chapter3.daoImpl.Cart" scope="session">
+            <aop:scoped-proxy proxy-target-class="false" />     <!--设置成false，则会生成基于接口的代理。-->
+        </bean>
+
+        <bean id="sgtPeggers" class="com.avicted.chapter2.daoImpl.BlankDisc" >
+            <constructor-arg  value="${disc.title}" />
+            <constructor-arg  value="${disc.artist}" />
+        </bean>
+
+
+
+    </beans>
+
+</beans>
