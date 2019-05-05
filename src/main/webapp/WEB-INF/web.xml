@@ -18,6 +18,7 @@
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
         <!-- 配置springMVC需要加载的配置文件 spring-dao.xml,spring-service.xml,spring-web.xml
              Mybatis - > spring -> springmvc -->
+
         <init-param>
             <param-name>contextConfigLocation</param-name>
             <param-value>classpath:spring/spring-*.xml</param-value>
