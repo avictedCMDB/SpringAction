@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <context:component-scan base-package="com.avicted.chapter4.dao"/>
+
+    <!--启动AspectJ自动代理-->
+    <aop:aspectj-autoproxy />
+    <!--声明Audience bean-->
+    <bean class="com.avicted.chapter4.aspect.Audience1"/>
+
+
+    <bean id="audienceForXml" class="com.avicted.chapter4.aspectForXml.AudienceForXml" />
+    <bean id="audienceForXml1" class="com.avicted.chapter4.aspectForXml.AudienceForXml1" />
+    <aop:config>
+        <aop:aspect id="" ref="audienceForXml">
+            <aop:pointcut id="performance" expression="execution(**com.avicted.chapter4.dao.Performance.perform(..))" />
+            <!--<aop:before method="silenceCellPhones" pointcut="execution(**com.avicted.chapter4.dao.Performance.perform(..))" />
+            <aop:before method="takeSeats" pointcut="execution(**com.avicted.chapter4.dao.Performance.perform(..))" />
+            <aop:after-returning method="applause" pointcut="execution(**com.avicted.chapter4.dao.Performance.perform(..))" />
+            <aop:after-throwing method="demandRefund" pointcut="execution(**com.avicted.chapter4.dao.Performance.perform(..))" />-->
+            <aop:before method="silenceCellPhones" pointcut-ref="performance" />
+            <aop:before method="takeSeats" pointcut-ref="performance" />
+            <aop:after-returning method="applause" pointcut-ref="performance" />
+            <aop:after-throwing method="demandRefund" pointcut-ref="performance" />
+        </aop:aspect>
+
+        <aop:aspect id="" ref="audienceForXml1" >
+            <aop:pointcut id="performance" expression="execution(**com.avicted.chapter4.dao.Performance.perform(..))" />
+            <aop:around method="watchPerformance" pointcut-ref="performance" />
+        </aop:aspect>
+    </aop:config>
+
+    <!--将TrackCounter配置为参数化的切面-->
+    <bean id="cd" class="com.avicted.chapter2.daoImpl.BankDisc1">
+        <property name="title" value="111111" />
+        <property name="artist" value="22222" />
+        <property name="tracks" >
+            <list>
+                <value>tracks1</value>
+                <value>tracks2</value>
+                <value>tracks3</value>
+                <value>tracks4</value>
+                <value>tracks5</value>
+                <value>tracks6</value>
+            </list>
+        </property>
+    </bean>
+    <bean id="trackCounter" class="com.avicted.chapter4.aspectForXml.TrackCounterForXml" />
+    <aop:config>
+        <aop:aspect id="" ref="trackCounter">
+            <aop:pointcut id="trackPlayed" expression="execution(* com.avicted.chapter2.daoImpl.BankDisc1.play(int)) and args(trackNumber)" />
+            <aop:around method="countTrack" pointcut-ref="trackPlayed" />
+        </aop:aspect>
+    </aop:config>
+
+
+
+
+</beans>

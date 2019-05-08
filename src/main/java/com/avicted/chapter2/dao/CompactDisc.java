@@ -7,4 +7,5 @@ package com.avicted.chapter2.dao;
 **/
 public interface CompactDisc {
    void play();
+   void play(int trackNumber);
 }
