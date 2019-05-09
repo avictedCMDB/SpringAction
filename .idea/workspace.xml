@@ -1,19 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1db2064a-c6ec-428f-93fc-69d39fa51dc3" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/avicted/chapter2/dao/CompactDisc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/avicted/chapter2/dao/CompactDisc.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/avicted/chapter2/daoImpl/BankDisc1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/avicted/chapter2/daoImpl/BankDisc1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/avicted/chapter2/daoImpl/BlankDisc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/avicted/chapter2/daoImpl/BlankDisc.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/avicted/chapter2/daoImpl/SgtPeppers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/avicted/chapter2/daoImpl/SgtPeppers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/knights.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/avicted/chapter2/CDPlayerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/avicted/chapter2/CDPlayerTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/avicted/chapter2/CDPlayerTest2.class" beforeDir="false" />
-    </list>
+    <list default="true" id="1db2064a-c6ec-428f-93fc-69d39fa51dc3" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -37,7 +25,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AudienceForXml.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AudienceForXml.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/avicted/chapter4/aspectForXml/AudienceForXml.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="405">
@@ -50,11 +38,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="aspect.xml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="aspect.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/chapter4/aspect.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
-              <caret line="15" column="89" lean-forward="true" selection-start-line="15" selection-start-column="89" selection-end-line="15" selection-end-column="89" />
+            <state relative-caret-position="219">
+              <caret line="44" column="38" lean-forward="true" selection-start-line="44" selection-start-column="38" selection-end-line="44" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -473,7 +461,7 @@
       <workItem from="1556523083270" duration="207000" />
       <workItem from="1556881478535" duration="948000" />
       <workItem from="1557105072550" duration="3827000" />
-      <workItem from="1557192046910" duration="18329000" />
+      <workItem from="1557192046910" duration="19542000" />
     </task>
     <servers />
   </component>
@@ -486,11 +474,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26519000" />
+    <option name="totallyTimeSpent" value="27732000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
@@ -860,13 +847,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/chapter4/aspect.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="15" column="89" lean-forward="true" selection-start-line="15" selection-start-column="89" selection-end-line="15" selection-end-column="89" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/avicted/chapter4/aspect/Audience.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="433">
@@ -885,6 +865,13 @@
             <element signature="e#742#743#0" expanded="true" />
             <element signature="e#798#799#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/chapter4/aspect.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="44" column="38" lean-forward="true" selection-start-line="44" selection-start-column="38" selection-end-line="44" selection-end-column="38" />
         </state>
       </provider>
     </entry>
